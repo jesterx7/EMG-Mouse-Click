@@ -1,0 +1,6 @@
+Plux API (Original Python 2.7):
+https://www.biosignalsplux.com/index.php/software/apis
+
+Plux Newest API (From Github Python 3):
+https://github.com/biosignalsplux/python-samples
+
