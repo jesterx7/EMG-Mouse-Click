@@ -1,0 +1,9 @@
+This system works with input of EMG signals which outputed by Biosignals sensors.
+The signals can't be immidiately inputed, because it still being raw data.
+Data need to be processed to extract the feature from data signal into numeric data.
+That process we call it 'Feature Extraction'. There is 4 Features that system use from the signals
+there is Max Amplitude, Min Amplitude, Mean Absolute Deviation (MAD), and Wavelength. 
+
+After all the feature extracted, next step is input the features into the systems to be classified as click.
+Classification systems can be choosen between two methods, that is KNN and SVM. Then finally
+the click classification result (left / right) will be executed by systems into actual mouse clicks.

@@ -5,7 +5,7 @@ class MyDevice(plux.MemoryDev):
     def onRawFrame(self, nSeq, data):
         if nSeq % 1000 == 0:
             print(nSeq, data)
-        if nSeq >= 10000: return True  # Stop after receiving 10000 frames
+        if nSeq >= 100000: return True  # Stop after receiving 10000 frames
         return False
 
     def onEvent(self, event):
