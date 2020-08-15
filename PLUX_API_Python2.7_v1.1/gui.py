@@ -172,42 +172,45 @@ def createHomePage():
     global main_frame, home_button
     clearFrame(main_frame)
     main_frame = make_frame(window, 220, 60, GetSystemMetrics(0) - 250, GetSystemMetrics(1) - 150, bg="#ffffff")
-    click_frame = make_frame(main_frame, (GetSystemMetrics(0) - 250) / 2 - 300, (GetSystemMetrics(1) - 150) / 2 - 400,
-               600, 250, bg="#f2f2f2", highlightbackground="black", highlightthickness=0.5)
+    click_frame = make_frame(main_frame, (GetSystemMetrics(0) - 250) / 2 - ((GetSystemMetrics(0) - 250) * 36 / 100 / 2), (GetSystemMetrics(1) - 150) / 2 - 400,
+               (GetSystemMetrics(0) - 250) * 36 / 100, (GetSystemMetrics(1) - 150) * 27 / 100, bg="#f2f2f2", highlightbackground="black", highlightthickness=0.5)
     make_frame(main_frame, (GetSystemMetrics(0) - 250) / 2 + 320, (GetSystemMetrics(1) - 150) / 2 - 400,
-               50, 50, bg="#ffd04f")
+               (GetSystemMetrics(0) - 250) * 3 / 100, (GetSystemMetrics(0) - 250) * 3 / 100, bg="#ffd04f")
     make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 + 380, (GetSystemMetrics(1) - 150) / 2 - 400,
-               200, 30, text="Idle / No Click", bg="#ffffff", fg="black", 
+               (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Idle / No Click", bg="#ffffff", fg="black", 
                font="Bahnschrift 14", anchor=tk.W)
     make_frame(main_frame, (GetSystemMetrics(0) - 250) / 2 + 320, (GetSystemMetrics(1) - 150) / 2 - 340,
-               50, 50, bg="#fc643a")
+               (GetSystemMetrics(0) - 250) * 3 / 100, (GetSystemMetrics(0) - 250) * 3 / 100, bg="#fc643a")
     make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 + 380, (GetSystemMetrics(1) - 150) / 2 - 340,
-               200, 30, text="Left Click", bg="#ffffff", fg="black", 
+               (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Left Click", bg="#ffffff", fg="black", 
                font="Bahnschrift 14", anchor=tk.W)
     make_frame(main_frame, (GetSystemMetrics(0) - 250) / 2 + 320, (GetSystemMetrics(1) - 150) / 2 - 280,
-               50, 50, bg="#3ad5fc")
+               (GetSystemMetrics(0) - 250) * 3 / 100, (GetSystemMetrics(0) - 250) * 3 / 100, bg="#3ad5fc")
     make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 + 380, (GetSystemMetrics(1) - 150) / 2 - 280,
-               200, 30, text="Right Click", bg="#ffffff", fg="black", 
+               (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Right Click", bg="#ffffff", fg="black", 
                font="Bahnschrift 14", anchor=tk.W)
     run_status = make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 - 300, (GetSystemMetrics(1) - 150) / 2 - 130,
-               200, 30, text="Status : ", bg="#ffffff", fg="black", 
+               (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Status : ", bg="#ffffff", fg="black", 
                font="Bahnschrift 16 bold", anchor=tk.W)
     run_result = make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 - 300, (GetSystemMetrics(1) - 150) / 2 - 80,
-               200, 30, text="Result : ", bg="#ffffff", fg="black", 
+               (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Result : ", bg="#ffffff", fg="black", 
                font="Bahnschrift 16 bold", anchor=tk.W)
-    make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 - 50, (GetSystemMetrics(1) - 150) / 2 - 130, 170, 30, text='Method',
+    make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 - 50, (GetSystemMetrics(1) - 150) / 2 - 130, (GetSystemMetrics(0) - 250) / 10,
+               (GetSystemMetrics(1) - 150) * 3, text='Method',
             font="Bahnschrift 14", bg='#ffffff', anchor=tk.W)
-    cb_method = make_comboBox(main_frame, (GetSystemMetrics(0) - 250) / 2 + 130, (GetSystemMetrics(1) - 150) / 2 - 130, 170, 30,
-            font="Bahnschrift 14", state='readonly')
+    cb_method = make_comboBox(main_frame, (GetSystemMetrics(0) - 250) / 2 + 130, (GetSystemMetrics(1) - 150) / 2 - 130, (GetSystemMetrics(0) - 250) / 10,
+               (GetSystemMetrics(1) - 150) * 3 / 100, font="Bahnschrift 14", state='readonly')
     cb_method['values'] = ('KNN', 'SVM')
     cb_method.current(0)
-    graph_button = make_button(main_frame, (GetSystemMetrics(0) - 250) / 2 - 50, (GetSystemMetrics(1) - 150) / 2 - 90, 170, 50, text='Show Graph',
-            font="Bahnschrift 14 bold", border=0, bg='#d9d2d2', compound=tk.CENTER,
-            fg='#ffffff', activebackground='#018c49',
+    graph_button = make_button(main_frame, (GetSystemMetrics(0) - 250) / 2 - 50, (GetSystemMetrics(1) - 150) / 2 - 90, (GetSystemMetrics(0) - 250) / 10,
+            (GetSystemMetrics(1) - 150) * 5 / 100, text='Show Graph',
+            font="Bahnschrift 14 bold", border=0, bg='#d9d2d2', 
+            compound=tk.CENTER, fg='#ffffff', activebackground='#018c49',
             state='disabled', command=lambda:showGraph(main_frame, graph_button))
-    run_button = make_button(main_frame, (GetSystemMetrics(0) - 250) / 2 + 130, (GetSystemMetrics(1) - 150) / 2 - 90, 170, 50, text='Run',
-            font="Bahnschrift 14 bold", border=0, bg='#6b84ff', compound=tk.CENTER,
-            fg='#ffffff', activebackground='#3246a8', command=lambda:runCallBack(click_frame, run_status, run_result, run_button, graph_button, cb_method.get()))
+    run_button = make_button(main_frame, (GetSystemMetrics(0) - 250) / 2 + 130, (GetSystemMetrics(1) - 150) / 2 - 90, (GetSystemMetrics(0) - 250) / 10,
+            (GetSystemMetrics(1) - 150) * 5 / 100, text='Run', font="Bahnschrift 14 bold", 
+            border=0, bg='#6b84ff', compound=tk.CENTER, fg='#ffffff', activebackground='#3246a8', 
+            command=lambda:runCallBack(click_frame, run_status, run_result, run_button, graph_button, cb_method.get()))
     
 
 def createAccuracyPage():
