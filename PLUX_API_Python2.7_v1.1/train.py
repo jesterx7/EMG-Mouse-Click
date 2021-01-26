@@ -52,7 +52,7 @@ for k in kernel_list:
     svm_filename        = 'svm_' + k + '_model.pkl'
     joblib.dump(clf, svm_filename)
 
-for n in (3, 5):
+for n in (3, 5, 7, 9, 11):
     knn = KNeighborsClassifier(n_neighbors=n)
     knn.fit(x_train, y_train)
     

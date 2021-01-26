@@ -150,9 +150,9 @@ def showFrame(frame_list, selected):
         clearFrame(frame[1])
 
 def showGraph(frame, graph_btn):
-    graph_img = ImageTk.PhotoImage(resize_icon('emg_signal.png', 612, 323))
-    graph = make_label(frame, (GetSystemMetrics(0) - 250) / 2 - 300, (GetSystemMetrics(1) - 150) / 2 + 20,
-               612, 323, text="Result : ", bg="#ffffff", fg="black", font="Bahnschrift 16 bold", anchor=tk.W,
+    graph_img = ImageTk.PhotoImage(resize_icon('emg_signal.png', 512, 223))
+    graph = make_label(frame, (GetSystemMetrics(0) - 250) / 2 - 300, (GetSystemMetrics(1) - 150) / 2 + 50,
+               512, 223, text="Result : ", bg="#ffffff", fg="black", font="Bahnschrift 16 bold", anchor=tk.W,
                image=graph_img)
     graph.photo = graph_img
     
@@ -161,8 +161,8 @@ def showGraph(frame, graph_btn):
 
 def destroyGraph(frame, graph, graph_btn):
     graph.pack_forget()
-    make_frame(frame, (GetSystemMetrics(0) - 250) / 2 - 300, (GetSystemMetrics(1) - 150) / 2 + 20,
-               612, 323, bg='#ffffff')
+    make_frame(frame, (GetSystemMetrics(0) - 250) / 2 - 300, (GetSystemMetrics(1) - 150) / 2 + 50,
+               512, 223, bg='#ffffff')
     
     graph_btn['text'] = 'Show Graph'
     graph_btn['command'] = lambda:showGraph(frame, graph_btn)
@@ -178,23 +178,23 @@ def createHomePage():
                (GetSystemMetrics(0) - 250) * 3 / 100, (GetSystemMetrics(0) - 250) * 3 / 100, bg="#ffd04f")
     make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 + ((GetSystemMetrics(0) - 250) * 36 / 100 / 2) + ((GetSystemMetrics(0) - 250) * 3 / 100) + 10, ((GetSystemMetrics(1) - 150) / 2) - ((GetSystemMetrics(1) - 150) * 43 / 100),
                (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Idle / No Click", bg="#ffffff", fg="black", 
-               font="Bahnschrift 14", anchor=tk.W)
+               font="Bahnschrift 12", anchor=tk.W)
     make_frame(main_frame, (GetSystemMetrics(0) - 250) / 2 + ((GetSystemMetrics(0) - 250) * 36 / 100 / 2) + 10, ((GetSystemMetrics(1) - 150) / 2) + 10 - ((GetSystemMetrics(1) - 150) * 43 / 100) + ((GetSystemMetrics(0) - 250) * 3 / 100),
                (GetSystemMetrics(0) - 250) * 3 / 100, (GetSystemMetrics(0) - 250) * 3 / 100, bg="#fc643a")
     make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 + ((GetSystemMetrics(0) - 250) * 36 / 100 / 2) + ((GetSystemMetrics(0) - 250) * 3 / 100) + 10, ((GetSystemMetrics(1) - 150) / 2) + 10 - ((GetSystemMetrics(1) - 150) * 43 / 100) + ((GetSystemMetrics(0) - 250) * 3 / 100),
                (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Left Click", bg="#ffffff", fg="black", 
-               font="Bahnschrift 14", anchor=tk.W)
+               font="Bahnschrift 12", anchor=tk.W)
     make_frame(main_frame, (GetSystemMetrics(0) - 250) / 2 + ((GetSystemMetrics(0) - 250) * 36 / 100 / 2) + 10, ((GetSystemMetrics(1) - 150) / 2) + 20 - ((GetSystemMetrics(1) - 150) * 43 / 100) + ((GetSystemMetrics(0) - 250) * 3 / 100) * 2,
                (GetSystemMetrics(0) - 250) * 3 / 100, (GetSystemMetrics(0) - 250) * 3 / 100, bg="#3ad5fc")
     make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 + ((GetSystemMetrics(0) - 250) * 36 / 100 / 2) + ((GetSystemMetrics(0) - 250) * 3 / 100) + 10, ((GetSystemMetrics(1) - 150) / 2) + 20 - ((GetSystemMetrics(1) - 150) * 43 / 100) + ((GetSystemMetrics(0) - 250) * 3 / 100) * 2,
                (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Right Click", bg="#ffffff", fg="black", 
-               font="Bahnschrift 14", anchor=tk.W)
+               font="Bahnschrift 12", anchor=tk.W)
     run_status = make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 - ((GetSystemMetrics(0) - 250) * 36 / 100 / 2), (GetSystemMetrics(1) - 150) / 2 - ((GetSystemMetrics(1) - 150) * 43 / 100) + ((GetSystemMetrics(1) - 150) * 27 / 100) + 10,
                (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Status : ", bg="#ffffff", fg="black", 
-               font="Bahnschrift 16 bold", anchor=tk.W)
+               font="Bahnschrift 14 bold", anchor=tk.W)
     run_result = make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 - ((GetSystemMetrics(0) - 250) * 36 / 100 / 2), (GetSystemMetrics(1) - 150) / 2 - ((GetSystemMetrics(1) - 150) * 43 / 100) + ((GetSystemMetrics(1) - 150) * 27 / 100) + ((GetSystemMetrics(1) - 150) * 3 / 100) + 40,
                (GetSystemMetrics(0) - 250) * 12 / 100, (GetSystemMetrics(1) - 150) * 3 / 100, text="Result : ", bg="#ffffff", fg="black", 
-               font="Bahnschrift 16 bold", anchor=tk.W)
+               font="Bahnschrift 14 bold", anchor=tk.W)
     make_label(main_frame, (GetSystemMetrics(0) - 250) / 2 - ((GetSystemMetrics(0) - 250) * 36 / 100 / 2) + ((GetSystemMetrics(0) - 250) * 36 / 100) - ((GetSystemMetrics(0) - 250) / 10) - ((GetSystemMetrics(0) - 250) / 10) + 20, (GetSystemMetrics(1) - 150) / 2 - ((GetSystemMetrics(1) - 150) * 43 / 100) + ((GetSystemMetrics(1) - 150) * 27 / 100) + 10,
                 (GetSystemMetrics(0) - 250) / 10, (GetSystemMetrics(1) - 150) * 3 / 100, text='Method', font="Bahnschrift 14", bg='#ffffff', anchor=tk.W)
     cb_method = make_comboBox(main_frame, (GetSystemMetrics(0) - 250) / 2 - ((GetSystemMetrics(0) - 250) * 36 / 100 / 2) + ((GetSystemMetrics(0) - 250) * 36 / 100) - ((GetSystemMetrics(0) - 250) / 10) + 20, (GetSystemMetrics(1) - 150) / 2 - ((GetSystemMetrics(1) - 150) * 43 / 100) + ((GetSystemMetrics(1) - 150) * 27 / 100) + 10, 
@@ -258,12 +258,12 @@ def createInformationPage():
                font="Bahnschrift 14", anchor=tk.CENTER, justify=tk.LEFT)
                             
 
-window = tk.Tk()
+window = tk.Tk() #window polos
 window.title("Click Classification")
-window.geometry(str(GetSystemMetrics(0)) + 'x' + str(GetSystemMetrics(1)))
-window.configure(bg="#f2f2f2")
+window.geometry(str(GetSystemMetrics(0)) + 'x' + str(GetSystemMetrics(1))) #resolusi
+window.configure(bg="#f2f2f2") #warna background
 
-checkClick = False
+checkClick = False #
 run_button = tk.Button()
 main_frame = make_frame(window, 220, 60, GetSystemMetrics(0) - 250, GetSystemMetrics(1) - 150, bg="#ffffff")
 make_label(window, 0, 0, GetSystemMetrics(0), 50, text="Click Classification", 
